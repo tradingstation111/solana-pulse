@@ -1,0 +1,118 @@
+# Collect, publish, repeat.
+#
+# Runs the report on a schedule, commits the new history point back to the
+# repository (so the anomaly baseline survives across runs) and deploys the
+# generated dashboard to GitHub Pages.
+#
+# Change the cadence in one place: the `cron` line below. `INTERVAL_NOTE` is
+# only cosmetic text shown in the run summary.
+name: Solana Pulse
+
+on:
+  schedule:
+    # Every 30 minutes. GitHub queues scheduled jobs, so the real cadence can
+    # drift by a few minutes under load; the report always states its own
+    # generation time, so a late run is visible rather than misleading.
+    - cron: "*/30 * * * *"
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      blocks:
+        description: "Number of blocks to sample (bandwidth vs detail)"
+        required: false
+        default: "6"
+
+permissions:
+  contents: write   # to commit data/history.jsonl and out/
+  pages: write      # to publish the dashboard
+  id-token: write   # required by actions/deploy-pages
+
+# Never run two collections at once: they would both append to history.jsonl
+# and race on the commit.
+concurrency:
+  group: solana-pulse
+  cancel-in-progress: false
+
+env:
+  BLOCK_SAMPLE: ${{ github.event.inputs.blocks || '6' }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # No install step. There is nothing to install: the program uses only the
+      # Python standard library. This is the whole dependency story.
+
+      - name: Run unit tests
+        run: python3 -m unittest discover -s tests -t . -v
+
+      - name: Generate report
+        run: python3 solana_pulse.py --out out --blocks "$BLOCK_SAMPLE"
+
+      - name: Summarise the run
+        run: |
+          python3 - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          d = json.load(open("out/latest.json"))
+          m = d["metrics"]
+          print(f"## Solana Pulse — {d['status'].upper()}\n")
+          print(f"Generated `{d['generated_at']}` · {d['sources']['ok']}/{d['sources']['total']} "
+                f"sources live · {d['history_records']} runs of history\n")
+          print("| Metric | Value |\n|---|---|")
+          for k, v in m.items():
+              print(f"| {k} | {v:,.2f}" if isinstance(v, float) else f"| {k} | {v}", "|")
+          if d["sources"].get("degraded"):
+              print("\n**Degraded sources:** " + ", ".join(d["sources"]["degraded"]))
+          PY
+
+      # Only the history file is committed on every scheduled run. It is about
+      # 700 bytes per run, so the repository stays small and every commit is a
+      # readable diff. The full outputs are published to Pages instead, and the
+      # committed samples under samples/ are refreshed on demand.
+      - name: Refresh committed samples
+        if: github.event_name != 'schedule'
+        run: |
+          mkdir -p samples
+          cp out/report.md out/report.json out/latest.json samples/
+
+      - name: Commit history and samples
+        run: |
+          git config user.name  "solana-pulse[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/history.jsonl samples 2>/dev/null || git add data/history.jsonl
+          if git diff --cached --quiet; then
+            echo "Nothing changed; skipping commit."
+          else
+            git commit -m "chore: report $(date -u +%Y-%m-%dT%H:%MZ) [skip ci]"
+            # A scheduled peer may have pushed since checkout; rebase and retry.
+            for attempt in 1 2 3; do
+              git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && \
+              git push origin "HEAD:${GITHUB_REF_NAME}" && break
+              echo "push attempt $attempt failed, retrying"
+              sleep 5
+            done
+          fi
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

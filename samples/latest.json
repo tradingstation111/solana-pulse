@@ -1,0 +1,39 @@
+{
+  "generated_at": "2026-08-27T01:34:54Z",
+  "schema_version": "1.0",
+  "status": "ok",
+  "alerts": {
+    "critical": 0,
+    "warning": 0,
+    "info": 0,
+    "total": 0
+  },
+  "sources": {
+    "total": 19,
+    "ok": 16,
+    "degraded": [
+      "CoinGecko: SOL 90d chart",
+      "CoinGecko: SOL market",
+      "CoinGecko: ecosystem tokens"
+    ]
+  },
+  "history_records": 4,
+  "metrics": {
+    "tps": 4059.866666666667,
+    "non_vote_tps": 2194.616666666667,
+    "slot_time_ms": 365.8536585365854,
+    "epoch": 1023,
+    "epoch_progress_pct": 13.80648148148148,
+    "validator_count": 697,
+    "delinquent_count": 12,
+    "delinquent_stake_pct": 0.037564070446317904,
+    "nakamoto_coefficient": 18,
+    "tvl_usd": 5688924881.99397,
+    "dex_volume_24h_usd": 2490922081,
+    "chain_fees_24h_usd": 12986889.76,
+    "stablecoin_total_usd": 16213893860.683138,
+    "median_tx_fee_lamports": 5359.5,
+    "tx_failure_rate_pct": 45.141563466942095,
+    "staking_ratio_pct": 74.80096193149424
+  }
+}

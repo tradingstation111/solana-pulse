@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Agave Releases</title>
+<entry><title>v3.1.4</title><link rel="alternate" href="https://github.com/anza-xyz/agave/releases/tag/v3.1.4"/>
+<updated>2026-08-20T11:22:33Z</updated><content>Release notes here</content></entry>
+</feed>

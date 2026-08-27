@@ -1,0 +1,202 @@
+{
+ "open": [
+  {
+   "number": 579,
+   "title": "SIMD-0579: Keccak-p1600 syscall",
+   "html_url": "https://github.com/solana-foundation/solana-improvement-documents/pull/579",
+   "created_at": "2026-07-09T21:39:55Z",
+   "updated_at": "2026-08-27T00:11:41Z",
+   "merged_at": null,
+   "labels": [],
+   "user": {
+    "login": "Rexicon226"
+   }
+  },
+  {
+   "number": 607,
+   "title": "Remove floating point arithmetic from Runtime critical inflation and rent path",
+   "html_url": "https://github.com/solana-foundation/solana-improvement-documents/pull/607",
+   "created_at": "2026-08-24T15:57:40Z",
+   "updated_at": "2026-08-26T22:12:01Z",
+   "merged_at": null,
+   "labels": [],
+   "user": {
+    "login": "tao-stones"
+   }
+  },
+  {
+   "number": 599,
+   "title": "SIMD-0599: Remove inactive stakes from partitioned epoch rewards",
+   "html_url": "https://github.com/solana-foundation/solana-improvement-documents/pull/599",
+   "created_at": "2026-08-13T00:00:51Z",
+   "updated_at": "2026-08-26T21:45:05Z",
+   "merged_at": null,
+   "labels": [],
+   "user": {
+    "login": "joncinque"
+   }
+  },
+  {
+   "number": 612,
+   "title": "SIMD-0612: Two-Phase Leader Schedule",
+   "html_url": "https://github.com/solana-foundation/solana-improvement-documents/pull/612",
+   "created_at": "2026-08-26T18:22:30Z",
+   "updated_at": "2026-08-26T18:59:32Z",
+   "merged_at": null,
+   "labels": [],
+   "user": {
+    "login": "Jotatavo"
+   }
+  },
+  {
+   "number": 608,
+   "title": "SIMD-0608: `DeactivateDelinquent` for Closed Vote Accounts",
+   "html_url": "https://github.com/solana-foundation/solana-improvement-documents/pull/608",
+   "created_at": "2026-08-25T07:44:16Z",
+   "updated_at": "2026-08-26T16:26:48Z",
+   "merged_at": null,
+   "labels": [],
+   "user": {
+    "login": "grod220"
+   }
+  },
+  {
+   "number": 610,
+   "title": "SIMD-0610: Prohibit Nonce Account Self-Withdrawals",
+   "html_url": "https://github.com/solana-foundation/solana-improvement-documents/pull/610",
+   "created_at": "2026-08-25T10:11:21Z",
+   "updated_at": "2026-08-26T16:21:39Z",
+   "merged_at": null,
+   "labels": [],
+   "user": {
+    "login": "grod220"
+   }
+  },
+  {
+   "number": 609,
+   "title": "SIMD-0609: Prohibit Vote Account Self-Withdrawals",
+   "html_url": "https://github.com/solana-foundation/solana-improvement-documents/pull/609",
+   "created_at": "2026-08-25T09:35:30Z",
+   "updated_at": "2026-08-26T15:35:14Z",
+   "merged_at": null,
+   "labels": [],
+   "user": {
+    "login": "grod220"
+   }
+  },
+  {
+   "number": 582,
+   "title": "SIMD-0582: Early detection of instruction trace overflow",
+   "html_url": "https://github.com/solana-foundation/solana-improvement-documents/pull/582",
+   "created_at": "2026-07-14T21:38:36Z",
+   "updated_at": "2026-08-26T06:44:07Z",
+   "merged_at": null,
+   "labels": [],
+   "user": {
+    "login": "LucasSte"
+   }
+  }
+ ],
+ "closed": [
+  {
+   "number": 586,
+   "title": "SIMD-0511: On-Chain Epoch Stakes",
+   "html_url": "https://github.com/solana-foundation/solana-improvement-documents/pull/586",
+   "created_at": "2026-07-22T14:30:52Z",
+   "updated_at": "2026-08-13T19:01:05Z",
+   "merged_at": null,
+   "labels": [],
+   "user": {
+    "login": "sam0x17"
+   }
+  },
+  {
+   "number": 553,
+   "title": "SIMD-0553: Resource and Inclusion Fee",
+   "html_url": "https://github.com/solana-foundation/solana-improvement-documents/pull/553",
+   "created_at": "2026-06-04T04:58:58Z",
+   "updated_at": "2026-08-12T05:58:45Z",
+   "merged_at": "2026-07-20T18:46:50Z",
+   "labels": [],
+   "user": {
+    "login": "cavemanloverboy"
+   }
+  },
+  {
+   "number": 550,
+   "title": "SIMD-0550: Double disinflation",
+   "html_url": "https://github.com/solana-foundation/solana-improvement-documents/pull/550",
+   "created_at": "2026-06-02T15:48:17Z",
+   "updated_at": "2026-08-12T04:03:52Z",
+   "merged_at": "2026-07-23T01:49:15Z",
+   "labels": [],
+   "user": {
+    "login": "lostintime101"
+   }
+  },
+  {
+   "number": 551,
+   "title": "re-amend SIMD-0340: additional inter- and intra- validation",
+   "html_url": "https://github.com/solana-foundation/solana-improvement-documents/pull/551",
+   "created_at": "2026-06-03T20:38:40Z",
+   "updated_at": "2026-07-31T16:27:23Z",
+   "merged_at": "2026-07-31T16:27:22Z",
+   "labels": [],
+   "user": {
+    "login": "lidatong"
+   }
+  },
+  {
+   "number": 433,
+   "title": "SIMD-0433: Loader V3: Set Program Data to ELF Length",
+   "html_url": "https://github.com/solana-foundation/solana-improvement-documents/pull/433",
+   "created_at": "2025-12-18T14:09:12Z",
+   "updated_at": "2026-07-31T08:06:26Z",
+   "merged_at": "2026-07-31T08:06:24Z",
+   "labels": [],
+   "user": {
+    "login": "buffalojoec"
+   }
+  },
+  {
+   "number": 545,
+   "title": "fix: correct spelling errors in SIP proposals",
+   "html_url": "https://github.com/solana-foundation/solana-improvement-documents/pull/545",
+   "created_at": "2026-05-23T13:01:37Z",
+   "updated_at": "2026-07-31T00:01:09Z",
+   "merged_at": null,
+   "labels": [
+    {
+     "name": "stale"
+    }
+   ],
+   "user": {
+    "login": "HusseinAdeiza"
+   }
+  },
+  {
+   "number": 591,
+   "title": "Xtreme",
+   "html_url": "https://github.com/solana-foundation/solana-improvement-documents/pull/591",
+   "created_at": "2026-07-30T18:53:42Z",
+   "updated_at": "2026-07-30T19:57:36Z",
+   "merged_at": null,
+   "labels": [],
+   "user": {
+    "login": "eug-adv-tech"
+   }
+  },
+  {
+   "number": 266,
+   "title": "SIMD-0266: Efficient Token program",
+   "html_url": "https://github.com/solana-foundation/solana-improvement-documents/pull/266",
+   "created_at": "2025-03-21T20:28:31Z",
+   "updated_at": "2026-07-29T17:45:31Z",
+   "merged_at": "2026-03-13T14:06:22Z",
+   "labels": [],
+   "user": {
+    "login": "febo"
+   }
+  }
+ ]
+}
