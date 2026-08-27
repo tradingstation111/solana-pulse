@@ -1,41 +1,37 @@
 {
-  "generated_at": "2026-08-27T02:07:12Z",
+  "generated_at": "2026-08-27T02:08:38Z",
   "schema_version": "1.0",
   "status": "ok",
   "alerts": {
     "critical": 0,
     "warning": 0,
-    "info": 0,
-    "total": 0
+    "info": 2,
+    "total": 2
   },
   "sources": {
     "total": 20,
-    "ok": 17,
-    "degraded": [
-      "GitHub: SIMD proposals",
-      "GitHub: accepted SIMDs",
-      "GitHub: client releases"
-    ]
+    "ok": 20,
+    "degraded": []
   },
-  "history_records": 15,
+  "history_records": 16,
   "metrics": {
-    "tps": 4230.666666666667,
-    "non_vote_tps": 2380.0833333333335,
-    "slot_time_ms": 368.09815950920245,
+    "tps": 4435.3,
+    "non_vote_tps": 2569.383333333333,
+    "slot_time_ms": 365.8536585365854,
     "epoch": 1023,
-    "epoch_progress_pct": 15.020833333333334,
+    "epoch_progress_pct": 15.09236111111111,
     "validator_count": 697,
     "delinquent_count": 11,
     "delinquent_stake_pct": 0.022383507192126697,
     "nakamoto_coefficient": 18,
-    "price_usd": 101.63,
-    "market_cap_usd": 59344821960,
-    "tvl_usd": 5697126840.445054,
-    "dex_volume_24h_usd": 2490946428,
+    "price_usd": 101.72,
+    "market_cap_usd": 59409601356,
+    "tvl_usd": 5762607382.683087,
+    "dex_volume_24h_usd": 2491738883,
     "chain_fees_24h_usd": 12986896.76,
     "stablecoin_total_usd": 16213893860.683138,
-    "median_tx_fee_lamports": 5469.25,
-    "tx_failure_rate_pct": 39.063705133490835,
-    "staking_ratio_pct": 74.80096480679542
+    "median_tx_fee_lamports": 5500.0,
+    "tx_failure_rate_pct": 43.98367943104916,
+    "staking_ratio_pct": 74.80096496571366
   }
 }

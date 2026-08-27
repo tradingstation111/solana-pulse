@@ -1,30 +1,33 @@
 # Solana Pulse — State of the Solana Ecosystem
 
-**Generated:** 2026-08-27T02:07:12Z · **Run time:** 37.74s · **History depth:** 15 runs · **Sources:** 17/20 live
+**Generated:** 2026-08-27T02:08:38Z · **Run time:** 13.25s · **History depth:** 16 runs · **Sources:** 20/20 live
 
 Automatically generated from public, keyless data sources using the Python standard library only. No API keys, no third-party packages.
 
 ## 1. Alerts
 
-**No anomalies detected.** All monitored metrics are within their expected ranges.
+**2 active** — 0 critical, 0 warning, 2 informational.
+
+- 🔵 INFO **Fee-to-volume ratio has shifted** (correlation) — Solana is collecting 52.12 bps of DEX volume in chain fees against a baseline of 52.14 bps (robust z = -69.0). A rise points at congestion pricing; a fall points at volume arriving through cheaper paths.
+- 🔵 INFO **Stablecoin share of TVL has shifted** (correlation) — Stablecoin float is 281.4% of chain TVL against a 285.0% baseline (robust z = -18.8). A rising share is dry powder sitting on the sidelines; a falling share is capital rotating into risk.
 
 ## 2. At a glance
 
 | Metric | Value | Context |
 |---|---|---|
-| Throughput | 4,231 TPS | non-vote 2,380 TPS |
-| Slot time | 368 ms | ~400 ms target |
-| Epoch | 1,023 | 15.0% complete |
+| Throughput | 4,435 TPS | non-vote 2,569 TPS |
+| Slot time | 366 ms | ~400 ms target |
+| Epoch | 1,023 | 15.1% complete |
 | Validators | 697 | 11 delinquent |
 | Nakamoto coefficient | 18 | validators controlling >33% of stake |
-| SOL price | $101.63 | +4.82% 24h |
-| Market cap | $59.34B | rank #7 |
-| DeFi TVL | $5.70B | +9.01% 7d |
-| DEX volume 24h | $2.49B | -15.13% |
+| SOL price | $101.72 | +5.05% 24h |
+| Market cap | $59.41B | rank #7 |
+| DeFi TVL | $5.76B | +10.27% 7d |
+| DEX volume 24h | $2.49B | -15.10% |
 | Chain fees 24h (REV) | $12.99M | -1.88% |
 | Stablecoins on Solana | $16.21B | 52 assets |
 | Tokenised RWA | $2.07B | equities $455.51M |
-| Median transaction fee | 5,469 lamports | $0.000556 |
+| Median transaction fee | 5,500 lamports | $0.000559 |
 | Staking ratio | 74.8% | 436.88M SOL staked |
 
 ## 3. Network performance
@@ -33,14 +36,14 @@ Cluster health is **ok** on `https://api.mainnet-beta.solana.com`, running solan
 
 | Metric | Current | Mean (30 samples) |
 |---|---|---|
-| Transactions per second | 4,230.7 | 4,451.6 |
-| Non-vote TPS | 2,380.1 | 2,587.4 |
-| Slot time (ms) | 368.1 | 365.9 |
-| Peak TPS in window | 4,851.4 | — |
-| Absolute slot | 442,000,890 | — |
-| Block height | 420,049,212 | — |
-| Lifetime transactions | 542,240,416,740 | — |
-| Slots left in epoch | 367,110 | — |
+| Transactions per second | 4,435.3 | 4,448.3 |
+| Non-vote TPS | 2,569.4 | 2,588.2 |
+| Slot time (ms) | 365.9 | 366.4 |
+| Peak TPS in window | 4,819.1 | — |
+| Absolute slot | 442,001,199 | — |
+| Block height | 420,049,517 | — |
+| Lifetime transactions | 542,240,914,507 | — |
+| Slots left in epoch | 366,801 | — |
 
 ### 3.1 Direct block sampling
 
@@ -48,21 +51,21 @@ Cluster health is **ok** on `https://api.mainnet-beta.solana.com`, running solan
 
 | Measurement | Value |
 |---|---|
-| Median user transaction fee | 5,469 lamports ($0.000556) |
-| 90th percentile fee | 31,184 lamports |
-| Median priority fee | 230 lamports |
-| Priority fees as share of fees paid | 79.2% |
-| On-chain transaction failure rate | 39.1% |
-| Vote transactions as share of all | 46.4% |
-| Average transactions per block | 1,462 |
-| Average unique fee payers per block | 284 |
-| Unique fee payers across the sample | 1,158 |
-| Wallets active in sampling window (capture-recapture estimate) | 2,508 |
-| New-wallet discovery rate | 4.21 /s |
+| Median user transaction fee | 5,500 lamports ($0.000559) |
+| 90th percentile fee | 25,312 lamports |
+| Median priority fee | 282 lamports |
+| Priority fees as share of fees paid | 79.8% |
+| On-chain transaction failure rate | 44.0% |
+| Vote transactions as share of all | 40.5% |
+| Average transactions per block | 1,740 |
+| Average unique fee payers per block | 323 |
+| Unique fee payers across the sample | 1,357 |
+| Wallets active in sampling window (capture-recapture estimate) | 2,951 |
+| New-wallet discovery rate | 4.93 /s |
 
 ## 4. Validators and decentralisation
 
-**686 active** validators and **11 delinquent**, securing 436.88M SOL of stake ($44.40B at the current price). Delinquent stake is 0.022% of the total.
+**686 active** validators and **11 delinquent**, securing 436.88M SOL of stake ($44.44B at the current price). Delinquent stake is 0.022% of the total.
 
 | Concentration measure | Value |
 |---|---|
@@ -122,38 +125,38 @@ Cluster health is **ok** on `https://api.mainnet-beta.solana.com`, running solan
 
 ### 4.1 Validator client diversity
 
-3,731 nodes are visible over gossip across 56 distinct software versions. The dominant client is **Agave** at 55.5% of nodes.
+3,735 nodes are visible over gossip across 55 distinct software versions. The dominant client is **Agave** at 55.5% of nodes.
 
 | Client | Nodes | Share |
 |---|---|---|
-| Agave | 2,071 | 55.5% |
-| JitoLabs | 992 | 26.6% |
-| AgaveBam | 379 | 10.2% |
-| Frankendancer | 107 | 2.9% |
-| Unknown(10) | 88 | 2.4% |
-| Firedancer | 36 | 1.0% |
-| Unknown(8) | 27 | 0.7% |
+| Agave | 2,072 | 55.5% |
+| JitoLabs | 989 | 26.5% |
+| AgaveBam | 380 | 10.2% |
+| Frankendancer | 108 | 2.9% |
+| Unknown(10) | 89 | 2.4% |
+| Firedancer | 37 | 1.0% |
+| Unknown(8) | 29 | 0.8% |
 | Unknown(11) | 14 | 0.4% |
 | Unknown(12) | 9 | 0.2% |
 | Unknown(13) | 3 | 0.1% |
 | Unknown(9) | 2 | 0.1% |
-| Unknown(13046) | 1 | 0.0% |
+| Unknown(17946) | 1 | 0.0% |
 | Unknown(19785) | 1 | 0.0% |
-| Unknown(21618) | 1 | 0.0% |
+| Unknown(24188) | 1 | 0.0% |
 
 ## 5. Economy
 
-SOL trades at **$101.63** — +0.80% in 1h, +4.82% in 24h, +19.60% in 7d, +37.90% in 30d. It sits -65.4% from its all-time high of $293.31 set on 2025-01-19.
+SOL trades at **$101.72** — +0.80% in 1h, +5.05% in 24h, +19.60% in 7d, +37.90% in 30d. It sits -65.3% from its all-time high of $293.31 set on 2025-01-19.
 
 | Market metric | Value |
 |---|---|
-| Market capitalisation | $59.34B (rank #7) |
-| Fully diluted valuation | $64.31B |
+| Market capitalisation | $59.41B (rank #7) |
+| Fully diluted valuation | $64.38B |
 | 24h volume | $3.76B |
-| Volume / market cap | 6.34% |
+| Volume / market cap | 6.32% |
 | 24h range | $95.23 – $102.29 |
-| Market cap / TVL | 10.42 |
-| Annualised fees / market cap | 7.99% |
+| Market cap / TVL | 10.31 |
+| Annualised fees / market cap | 7.98% |
 
 **Supply and inflation**
 
@@ -167,7 +170,7 @@ SOL trades at **$101.63** — +0.80% in 1h, +4.82% in 24h, +19.60% in 7d, +37.90
 
 **Total value locked**
 
-Solana holds $5.70B in DeFi TVL, ranking **#2** of 465 tracked chains and 6.44% of all on-chain TVL. Change: +0.14% (24h), +9.01% (7d), +18.25% (30d).
+Solana holds $5.76B in DeFi TVL, ranking **#2** of 465 tracked chains and 6.51% of all on-chain TVL. Change: +0.08% (24h), +10.27% (7d), +19.61% (30d).
 
 **Top protocols by TVL on Solana**
 
@@ -217,8 +220,8 @@ $2.49B traded in 24h across 77 venues (-15.1% day over day, -17.2% week over wee
 | BisonFi | $251.44M | $3.12B | -38.9% |
 | Meteora DLMM | $184.81M | $1.76B | -25.0% |
 | Scorch | $173.07M | $1.42B | +0.0% |
-| Raydium AMM | $166.92M | $1.53B | -13.6% |
-| Manifest Trade | $123.36M | $1.23B | -37.5% |
+| Raydium AMM | $165.12M | $1.53B | -14.5% |
+| Manifest Trade | $123.31M | $1.23B | -37.5% |
 | Axiom | $88.92M | $447.30M | +0.0% |
 | Jupiterz | $79.31M | $393.75M | +0.0% |
 | Aquifer | $70.52M | $418.13M | +0.0% |
@@ -276,22 +279,22 @@ $16.21B across 52 assets; the largest holds 43.1% of the float.
 | Apollo Diversified Credit Securitize Fund | $18.37M | +0.0% |
 | VanEck Treasury Fund | $13.94M | -0.1% |
 
-**Wallet activity:** 284 distinct fee payers appeared in the average sampled block, and 1,158 distinct wallets across the whole sample. Projected user (non-vote) transactions per day at the current rate: 205,639,200.
+**Wallet activity:** 323 distinct fee payers appeared in the average sampled block, and 1,357 distinct wallets across the whole sample. Projected user (non-vote) transactions per day at the current rate: 221,994,720.
 
 **Largest Solana-ecosystem tokens by market cap**
 
 | Token | Price | Market cap | 24h volume | 24h |
 |---|---|---|---|---|
-| USDT (Tether) | $1.0000 | $183.36B | $52.12B | +0.0% |
-| USDC (USDC) | $1.0000 | $73.86B | $15.38B | +0.0% |
-| SOL (Solana) | $101.6700 | $59.35B | $3.76B | +4.9% |
-| USDS (USDS) | $0.9996 | $9.74B | $114.78M | -0.0% |
-| WBTC (Wrapped Bitcoin) | $78.88K | $9.16B | $97.30M | +0.2% |
-| LINK (Chainlink) | $11.5700 | $8.65B | $354.09M | +1.8% |
-| CBBTC (Coinbase Wrapped BTC) | $78.92K | $7.76B | $376.43M | +0.1% |
+| USDT (Tether) | $1.0000 | $183.35B | $52.14B | +0.0% |
+| USDC (USDC) | $1.0000 | $73.86B | $15.39B | +0.0% |
+| SOL (Solana) | $101.7200 | $59.41B | $3.76B | +5.1% |
+| USDS (USDS) | $0.9997 | $9.74B | $114.79M | -0.0% |
+| WBTC (Wrapped Bitcoin) | $78.89K | $9.16B | $97.30M | +0.2% |
+| LINK (Chainlink) | $11.5800 | $8.66B | $354.30M | +2.0% |
+| CBBTC (Coinbase Wrapped BTC) | $78.93K | $7.76B | $374.04M | +0.2% |
 | USD1 (USD1) | $0.9996 | $4.09B | $1.17B | +0.0% |
-| USDE (Ethena USDe) | $0.9998 | $4.05B | $41.91M | +0.0% |
-| USDG (Global Dollar) | $1.0000 | $3.35B | $471.50M | +0.0% |
+| USDE (Ethena USDe) | $0.9998 | $4.05B | $41.14M | +0.0% |
+| USDG (Global Dollar) | $1.0000 | $3.35B | $470.92M | +0.0% |
 | USYC (Circle USYC) | $1.1400 | $2.89B | $0.00 | +0.0% |
 | BUIDL (BlackRock USD Institutional Digital Liquidity Fund) | $1.0000 | $2.81B | $0.00 | +0.0% |
 
@@ -299,13 +302,68 @@ $16.21B across 52 assets; the largest holds 43.1% of the float.
 
 | Label | Address | Balance | Sig. rate | Failures in sample |
 |---|---|---|---|---|
-| SPL Token Program | `TokenkegQfeZyiN…` | 0.1938 SOL | 6,000.0/min | 55% |
-| Token-2022 Program | `TokenzQdBNbLqP5…` | 0.0701 SOL | 6,000.0/min | 60% |
-| Jupiter Aggregator v6 | `JUP6LkbZbjS1jKK…` | 6.9203 SOL | 6,000.0/min | 67% |
-| Stake Program | `Stake1111111111…` | 0.0011 SOL | 21.1/min | 0% |
-| Memo Program v2 | `MemoSq4gqABAXKb…` | 0.5230 SOL | 6,000.0/min | 53% |
+| SPL Token Program | `TokenkegQfeZyiN…` | 0.1938 SOL | 6,000.0/min | 22% |
+| Token-2022 Program | `TokenzQdBNbLqP5…` | 0.0701 SOL | 6,000.0/min | 55% |
+| Jupiter Aggregator v6 | `JUP6LkbZbjS1jKK…` | 6.9203 SOL | 3,000.0/min | 46% |
+| Stake Program | `Stake1111111111…` | 0.0011 SOL | 43.5/min | 0% |
+| Memo Program v2 | `MemoSq4gqABAXKb…` | 0.5230 SOL | 6,000.0/min | 30% |
 
 ## 7. Upgrades, governance and news
+
+**Named upgrades being tracked** — 123 SIMDs accepted in total.
+
+| Upgrade | Status | Why it matters | Document |
+|---|---|---|---|
+| Alpenglow (SIMD-0326) | accepted | Replaces TowerBFT and Proof of History voting with Votor and Rotor, targeting sub-second finality. The largest consensus change in Solana's history. | [link](https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0326-alpenglow.md) |
+| Alpenglow migration (SIMD-0384) | accepted | The staged rollout plan that takes the cluster from the current consensus to Alpenglow. | [link](https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0384-alpenglow-migration.md) |
+| SIMD-0525 — reduce slot times (SIMD-0525) | accepted | Shortens the target slot time below 400 ms, raising throughput and lowering latency. | [link](https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0525-reduce-slot-times.md) |
+| SIMD-0296 — larger transactions (SIMD-0296) | accepted | Raises the transaction size limit above 1232 bytes, unlocking more complex instructions. | [link](https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0296-larger-transactions.md) |
+| SIMD-0123 — block revenue distribution (SIMD-0123) | accepted | Lets validators share block revenue with their stakers on chain. | [link](https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0123-block-revenue-distribution.md) |
+
+**21 open SIMDs** (Solana Improvement Documents).
+
+_Proposals being tracked closely:_
+
+| SIMD | Title | State | Updated |
+|---|---|---|---|
+| #556 | [SIMD-0525: Amend for VAT](https://github.com/solana-foundation/solana-improvement-documents/pull/556) | merged | 2026-06-17 |
+| #552 | [Add FG to SIMD-0525](https://github.com/solana-foundation/solana-improvement-documents/pull/552) | merged | 2026-06-04 |
+| #546 | [SIMD-0525: Remove signatures per slot change](https://github.com/solana-foundation/solana-improvement-documents/pull/546) | merged | 2026-05-28 |
+
+_Recently merged:_
+
+| PR | Title | Merged |
+|---|---|---|
+| #551 | [re-amend SIMD-0340: additional inter- and intra- validation](https://github.com/solana-foundation/solana-improvement-documents/pull/551) | 2026-07-31 |
+| #433 | [SIMD-0433: Loader V3: Set Program Data to ELF Length](https://github.com/solana-foundation/solana-improvement-documents/pull/433) | 2026-07-31 |
+| #550 | [SIMD-0550: Double disinflation](https://github.com/solana-foundation/solana-improvement-documents/pull/550) | 2026-07-23 |
+| #553 | [SIMD-0553: Resource and Inclusion Fee](https://github.com/solana-foundation/solana-improvement-documents/pull/553) | 2026-07-20 |
+| #572 | [SIMD-0392: Clarify included stake accounts and calculations](https://github.com/solana-foundation/solana-improvement-documents/pull/572) | 2026-07-16 |
+| #574 | [SIMD-0290: narrow scope to blockhash tx](https://github.com/solana-foundation/solana-improvement-documents/pull/574) | 2026-07-16 |
+| #565 | [SIMD-0565: Secp256r1 curve syscalls](https://github.com/solana-foundation/solana-improvement-documents/pull/565) | 2026-07-10 |
+| #517 | [Clarify requested accounts data size and heap treatment in TXV1](https://github.com/solana-foundation/solana-improvement-documents/pull/517) | 2026-06-24 |
+
+_Open proposals, most recently updated:_
+
+| PR | Title | Author | Opened |
+|---|---|---|---|
+| #579 | [SIMD-0579: Keccak-p1600 syscall](https://github.com/solana-foundation/solana-improvement-documents/pull/579) | Rexicon226 | 2026-07-09 |
+| #607 | [Remove floating point arithmetic from Runtime critical inflation and rent path](https://github.com/solana-foundation/solana-improvement-documents/pull/607) | tao-stones | 2026-08-24 |
+| #599 | [SIMD-0599: Remove inactive stakes from partitioned epoch rewards](https://github.com/solana-foundation/solana-improvement-documents/pull/599) | joncinque | 2026-08-13 |
+| #612 | [SIMD-0612: Two-Phase Leader Schedule](https://github.com/solana-foundation/solana-improvement-documents/pull/612) | Jotatavo | 2026-08-26 |
+| #608 | [SIMD-0608: `DeactivateDelinquent` for Closed Vote Accounts](https://github.com/solana-foundation/solana-improvement-documents/pull/608) | grod220 | 2026-08-25 |
+| #610 | [SIMD-0610: Prohibit Nonce Account Self-Withdrawals](https://github.com/solana-foundation/solana-improvement-documents/pull/610) | grod220 | 2026-08-25 |
+| #609 | [SIMD-0609: Prohibit Vote Account Self-Withdrawals](https://github.com/solana-foundation/solana-improvement-documents/pull/609) | grod220 | 2026-08-25 |
+| #582 | [SIMD-0582: Early detection of instruction trace overflow](https://github.com/solana-foundation/solana-improvement-documents/pull/582) | LucasSte | 2026-07-14 |
+| #602 | [SIMD-0602: Disallow Nonce Account as Program ID](https://github.com/solana-foundation/solana-improvement-documents/pull/602) | 2501babe | 2026-08-18 |
+| #600 | [simd-0553 amendment: adjust inclusion fee](https://github.com/solana-foundation/solana-improvement-documents/pull/600) | cavemanloverboy | 2026-08-14 |
+
+**Validator client releases**
+
+| Client | Latest stable | Published | Link |
+|---|---|---|---|
+| Agave (Anza) | v4.2.1 | 2026-08-13 | [release notes](https://github.com/anza-xyz/agave/releases/tag/v4.2.1) |
+| Firedancer (Jump) | v26.08.2 | 2026-08-25 | [release notes](https://github.com/firedancer-io/firedancer/releases/tag/v26.08.2) |
 
 **Cluster status page:** All Systems Operational (indicator: `none`, updated 2026-08-27).
 
@@ -328,42 +386,42 @@ _Social sentiment from X is deliberately omitted: there is no keyless, terms-com
 
 ## 8. Trend history
 
-This deployment has 15 recorded runs, the first at 2026-08-27T01:30:53Z. Every run appends one line to `data/history.jsonl`; the anomaly detector reads it back as its baseline.
+This deployment has 16 recorded runs, the first at 2026-08-27T01:30:53Z. Every run appends one line to `data/history.jsonl`; the anomaly detector reads it back as its baseline.
 
 | Metric | First run | Latest | Min | Max | Change |
 |---|---|---|---|---|---|
-| TPS | 4,178 | 4,231 | 3,886 | 4,885 | +1.27% |
-| Slot time (ms) | 355 | 368 | 355 | 373 | +3.68% |
+| TPS | 4,178 | 4,435 | 3,886 | 4,885 | +6.17% |
+| Slot time (ms) | 355 | 366 | 355 | 373 | +3.05% |
 | Validators | 697 | 697 | 697 | 697 | +0.00% |
 | Delinquent stake % | 0.038 | 0.022 | 0.022 | 0.038 | -40.41% |
-| SOL price (USD) | 101.53 | 101.63 | 101.32 | 101.79 | +0.10% |
-| TVL (USD) | 5,688,924,882 | 5,697,126,840 | 5,688,924,882 | 5,697,126,840 | +0.14% |
+| SOL price (USD) | 101.53 | 101.72 | 101.32 | 101.79 | +0.19% |
+| TVL (USD) | 5,688,924,882 | 5,762,607,383 | 5,688,924,882 | 5,762,607,383 | +1.30% |
 | Nakamoto coefficient | 18 | 18 | 18 | 18 | +0.00% |
 
 ## 9. Data sources and freshness
 
 | Source | Status | Latency | Fetched | Detail |
 |---|---|---|---|---|
-| GitHub: SIMD proposals | 🔴 unavailable | 14 ms | 38 sec ago | FetchError: HTTP 403 rate limit exceeded: {"message":"API rate limit exceeded for 52.188.… |
-| GitHub: accepted SIMDs | 🔴 unavailable | 13 ms | 38 sec ago | FetchError: HTTP 403 rate limit exceeded: {"message":"API rate limit exceeded for 52.188.… |
-| GitHub: client releases | 🔴 unavailable | 146 ms | 38 sec ago | FetchError: no release feeds reachable: Agave (Anza): FetchError HTTP 403 rate limit exce… |
-| CoinGecko: SOL 90d chart | 🟢 live | 151 ms | 38 sec ago | — |
-| CoinGecko: SOL market | 🟢 live | 168 ms | 38 sec ago | — |
-| CoinGecko: ecosystem tokens | 🟢 live | 296 ms | 37 sec ago | — |
-| DefiLlama: DEX volume | 🟢 live | 134 ms | 38 sec ago | — |
-| DefiLlama: chain TVL | 🟢 live | 170 ms | 38 sec ago | — |
-| DefiLlama: fees & REV | 🟢 live | 143 ms | 38 sec ago | — |
-| DefiLlama: protocols | 🟢 live | 316 ms | 38 sec ago | — |
-| DefiLlama: stablecoins | 🟢 live | 310 ms | 37 sec ago | — |
-| Ecosystem news feeds | 🟢 live | 1580 ms | 36 sec ago | — |
-| Solana RPC: block sample | 🟢 live | 16621 ms | 0 sec ago | 6 blocks, ~150 slots apart |
-| Solana RPC: cluster | 🟢 live | 2723 ms | 35 sec ago | — |
-| Solana RPC: cluster nodes | 🟢 live | 1792 ms | 31 sec ago | — |
-| Solana RPC: performance samples | 🟢 live | 653 ms | 35 sec ago | — |
-| Solana RPC: supply & inflation | 🟢 live | 7984 ms | 23 sec ago | — |
-| Solana RPC: vote accounts | 🟢 live | 1359 ms | 33 sec ago | — |
-| Solana RPC: watched accounts | 🟢 live | 6606 ms | 17 sec ago | — |
-| Solana Statuspage | 🟢 live | 261 ms | 37 sec ago | — |
+| CoinGecko: SOL 90d chart | 🟢 live | 96 ms | 13 sec ago | — |
+| CoinGecko: SOL market | 🟢 live | 105 ms | 13 sec ago | — |
+| CoinGecko: ecosystem tokens | 🟢 live | 331 ms | 12 sec ago | — |
+| DefiLlama: DEX volume | 🟢 live | 955 ms | 12 sec ago | — |
+| DefiLlama: chain TVL | 🟢 live | 195 ms | 13 sec ago | — |
+| DefiLlama: fees & REV | 🟢 live | 1069 ms | 12 sec ago | — |
+| DefiLlama: protocols | 🟢 live | 358 ms | 12 sec ago | — |
+| DefiLlama: stablecoins | 🟢 live | 511 ms | 12 sec ago | — |
+| Ecosystem news feeds | 🟢 live | 2262 ms | 10 sec ago | — |
+| GitHub: SIMD proposals | 🟢 live | 1334 ms | 11 sec ago | — |
+| GitHub: accepted SIMDs | 🟢 live | 224 ms | 12 sec ago | — |
+| GitHub: client releases | 🟢 live | 454 ms | 11 sec ago | — |
+| Solana RPC: block sample | 🟢 live | 2814 ms | 0 sec ago | 6 blocks, ~150 slots apart |
+| Solana RPC: cluster | 🟢 live | 677 ms | 12 sec ago | — |
+| Solana RPC: cluster nodes | 🟢 live | 387 ms | 11 sec ago | — |
+| Solana RPC: performance samples | 🟢 live | 118 ms | 12 sec ago | — |
+| Solana RPC: supply & inflation | 🟢 live | 7804 ms | 4 sec ago | — |
+| Solana RPC: vote accounts | 🟢 live | 134 ms | 12 sec ago | — |
+| Solana RPC: watched accounts | 🟢 live | 1308 ms | 2 sec ago | — |
+| Solana Statuspage | 🟢 live | 206 ms | 12 sec ago | — |
 
 ## 10. Methodology
 
