@@ -26,17 +26,42 @@ def _table(headers: list[str], rows: list[list[str]]) -> list[str]:
     return out
 
 
+#: Maps a snapshot section key to the source names that populate it, so a
+#: degradation notice can quote the error that actually caused it.
+SECTION_SOURCES: dict[str, tuple[str, ...]] = {
+    "cluster": ("Solana RPC: cluster",),
+    "performance": ("Solana RPC: performance samples",),
+    "validators": ("Solana RPC: vote accounts",),
+    "cluster_nodes": ("Solana RPC: cluster nodes",),
+    "supply": ("Solana RPC: supply & inflation",),
+    "accounts": ("Solana RPC: watched accounts",),
+    "blocks": ("Solana RPC: block sample",),
+    "market": ("CoinGecko: SOL market",),
+    "price_history": ("CoinGecko: SOL 90d chart",),
+    "ecosystem_tokens": ("CoinGecko: ecosystem tokens",),
+    "tvl": ("DefiLlama: chain TVL",),
+    "protocols": ("DefiLlama: protocols",),
+    "dex": ("DefiLlama: DEX volume",),
+    "fees": ("DefiLlama: fees & REV",),
+    "stablecoins": ("DefiLlama: stablecoins",),
+    "news": ("Ecosystem news feeds",),
+    "simds": ("GitHub: SIMD proposals",),
+    "accepted_simds": ("GitHub: accepted SIMDs",),
+    "releases": ("GitHub: client releases",),
+    "status": ("Solana Statuspage",),
+}
+
+
 def _degraded(snapshot: dict[str, Any], *keys: str) -> str | None:
     """Return a warning line if any of the named sections failed to collect."""
     missing = [k for k in keys if k not in snapshot.get("sections", {})]
     if not missing:
         return None
-    errors = {
-        s["name"]: s["error"] for s in snapshot.get("sources", [])
-        if not s["ok"]
-    }
+    wanted = {name for key in missing for name in SECTION_SOURCES.get(key, ())}
+    errors = [f"{s['name']} — {s['error']}" for s in snapshot.get("sources", [])
+              if not s["ok"] and s["name"] in wanted]
     detail = "; ".join(f"`{k}`" for k in missing)
-    reasons = "; ".join(f"{n} — {e}" for n, e in errors.items()) or "reason not recorded"
+    reasons = "; ".join(errors) or "reason not recorded"
     return f"> ⚠️ **Source unavailable:** {detail}. This section is incomplete. Reported errors: {reasons}\n"
 
 
@@ -367,6 +392,16 @@ def render(snapshot: dict[str, Any]) -> str:
     # --- Upgrades and news -------------------------------------------------
     add("## 7. Upgrades, governance and news")
     add("")
+    accepted = s.get("accepted_simds")
+    if accepted:
+        add(f"**Named upgrades being tracked** — {num(accepted.get('accepted_count'))} SIMDs "
+            f"accepted in total.")
+        add("")
+        lines.extend(_table(["Upgrade", "Status", "Why it matters", "Document"],
+                            [[u["label"] + (f" (SIMD-{u['simd']:04d})" if u.get("simd") is not None else ""),
+                              "accepted" if u["accepted"] else "not yet accepted",
+                              u["why"], f"[link]({u['url']})" if u.get("url") else DASH]
+                             for u in accepted.get("tracked_upgrades", [])]))
     simds = s.get("simds")
     if simds:
         add(f"**{num(simds.get('open_count'))} open SIMDs** (Solana Improvement Documents).")

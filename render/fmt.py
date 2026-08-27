@@ -43,13 +43,6 @@ def sol(value: Any, decimals: int = 0) -> str:
     return f"{value:,.{decimals}f} SOL"
 
 
-def lamports_to_sol(value: Any) -> str:
-    """Lamports rendered as SOL with lamport precision."""
-    if not isinstance(value, (int, float)):
-        return DASH
-    return f"{value / 1e9:.9f}".rstrip("0").rstrip(".") + " SOL"
-
-
 def ago(iso_ts: str | None, now: datetime | None = None) -> str:
     """Human relative time such as '4 min ago'."""
     if not iso_ts:

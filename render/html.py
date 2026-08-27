@@ -493,12 +493,16 @@ def _growth_section(snapshot: dict[str, Any]) -> str:
               _table([("Program", False), ("Balance", True), ("Sig rate", True), ("Failed", True)],
                      [[f'{esc(r["label"])}<br><span class="mono" style="color:var(--dim);font-size:11px">'
                        f'{esc(truncate(r["address"], 22))}</span>',
-                       sol(r.get("balance_sol"), 3), num(r.get("sig_rate_per_min"), 1, "/min"),
+                       sol(r.get("balance_sol"), 3),
+                       (num(r.get("sig_rate_per_min"), 0, "/min") + "+"
+                        if r.get("sig_rate_is_lower_bound") else num(r.get("sig_rate_per_min"), 1, "/min")),
                        pct(r.get("failure_rate_pct"), 0)]
                       for r in accounts]) +
               '<p class="note">' +
               " · ".join(f'<b>{esc(r["label"])}</b>: {esc(r.get("why", ""))}' for r in accounts) +
-              '</p>', span=True),
+              ' — a rate marked with "+" is a lower bound: block timestamps have one-second '
+              'resolution, and the program produced the whole 100-signature sample inside a '
+              'single second.</p>', span=True),
     ]
     return f'<div class="grid g2">{"".join(cards)}</div>'
 
@@ -507,6 +511,7 @@ def _upgrades_section(snapshot: dict[str, Any]) -> str:
     """SIMD governance, client releases, incidents and ecosystem news."""
     s = snapshot.get("sections", {})
     simds = s.get("simds") or {}
+    accepted = s.get("accepted_simds") or {}
     releases = s.get("releases") or {}
     newsdata = s.get("news") or {}
     status = s.get("status") or {}
@@ -514,6 +519,21 @@ def _upgrades_section(snapshot: dict[str, Any]) -> str:
                             *_source_names(snapshot, "Ecosystem news"))
 
     cards = []
+    if accepted.get("tracked_upgrades"):
+        rows = [[
+            f'<b>{esc(u["label"])}</b>' + (f' <span class="mono" style="color:var(--dim)">SIMD-{u["simd"]:04d}</span>'
+                                          if u.get("simd") is not None else ""),
+            f'<span class="pill {"ok" if u["accepted"] else "info"}">'
+            f'{"accepted" if u["accepted"] else "not yet accepted"}</span>',
+            f'<span style="color:var(--muted)">{esc(u["why"])}</span>',
+            f'<a href="{esc(u["url"])}">document</a>' if u.get("url") else DASH,
+        ] for u in accepted["tracked_upgrades"]]
+        cards.append(_card(
+            "Named upgrades being tracked",
+            f"Status of the protocol changes the ecosystem is waiting on. "
+            f"{num(accepted.get('accepted_count'))} SIMDs have been accepted in total.",
+            _table([("Upgrade", False), ("Status", False), ("Why it matters", False), ("", False)], rows),
+            span=True))
     if simds.get("highlighted"):
         cards.append(_card(
             "Proposals under close watch",
@@ -534,6 +554,13 @@ def _upgrades_section(snapshot: dict[str, Any]) -> str:
                [[f'<a href="{esc(r["url"])}">#{r["number"]}</a>', esc(truncate(r["title"], 78)),
                  short_date(r.get("merged_at"))] for r in simds.get("recently_merged", [])[:14]],
                scroll=True)))
+    if accepted.get("accepted_recent"):
+        cards.append(_card(
+            "Most recent accepted SIMDs", "Highest-numbered proposal documents in the repository.",
+            _table([("SIMD", True), ("Title", False)],
+                   [[f'<a href="{esc(d["url"])}">{d["simd"]:04d}</a>' if d.get("simd") is not None
+                     else DASH, esc(truncate(d["title"], 70))]
+                    for d in accepted["accepted_recent"][:12]], scroll=True)))
     if releases:
         rows = []
         for client in releases.get("clients", []):

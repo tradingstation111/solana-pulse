@@ -81,7 +81,31 @@ GITHUB_RELEASES = (
 
 # SIMDs the ecosystem is actively watching; matched case-insensitively against
 # PR titles so they can be surfaced even when buried in a long list.
-HIGHLIGHT_SIMDS: tuple[str, ...] = ("alpenglow", "simd-525", "simd-0326", "simd-0228", "simd-0123")
+HIGHLIGHT_SIMDS: tuple[str, ...] = ("alpenglow", "simd-525", "simd-0525", "simd-0326", "simd-0296")
+
+# Accepted proposals live as Markdown files in this directory. Listing it gives
+# the set of SIMDs that have actually been merged, which is a different and more
+# useful question than "what pull requests are open".
+GITHUB_SIMD_PROPOSALS = (
+    "https://api.github.com/repos/solana-foundation/solana-improvement-documents/contents/proposals"
+)
+
+# Named upgrades to surface explicitly. The middle field is the proposal's
+# filename *stem* - the part after the SIMD number - matched exactly, so that
+# "alpenglow" cannot accidentally resolve to "alpenglow-migration".
+TRACKED_UPGRADES: tuple[tuple[str, str, str], ...] = (
+    ("Alpenglow", "alpenglow",
+     "Replaces TowerBFT and Proof of History voting with Votor and Rotor, targeting "
+     "sub-second finality. The largest consensus change in Solana's history."),
+    ("Alpenglow migration", "alpenglow-migration",
+     "The staged rollout plan that takes the cluster from the current consensus to Alpenglow."),
+    ("SIMD-0525 — reduce slot times", "reduce-slot-times",
+     "Shortens the target slot time below 400 ms, raising throughput and lowering latency."),
+    ("SIMD-0296 — larger transactions", "larger-transactions",
+     "Raises the transaction size limit above 1232 bytes, unlocking more complex instructions."),
+    ("SIMD-0123 — block revenue distribution", "block-revenue-distribution",
+     "Lets validators share block revenue with their stakers on chain."),
+)
 
 NEWS_FEEDS: tuple[tuple[str, str], ...] = (
     ("Solana News", "https://solana.com/news/rss.xml"),

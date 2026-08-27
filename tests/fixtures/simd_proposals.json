@@ -1,0 +1,740 @@
+[
+ {
+  "name": "0001-simd-process.md",
+  "type": "file",
+  "size": 7595,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0001-simd-process.md"
+ },
+ {
+  "name": "0007-access-policy.md",
+  "type": "file",
+  "size": 6212,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0007-access-policy.md"
+ },
+ {
+  "name": "0015-partitioned-epoch-reward-distribution.md",
+  "type": "file",
+  "size": 10865,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0015-partitioned-epoch-reward-distribution.md"
+ },
+ {
+  "name": "0022-multi-stake.md",
+  "type": "file",
+  "size": 7313,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0022-multi-stake.md"
+ },
+ {
+  "name": "0033-timely-vote-credits.md",
+  "type": "file",
+  "size": 16381,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0033-timely-vote-credits.md"
+ },
+ {
+  "name": "0046-optimistic-cluster-restart-automation.md",
+  "type": "file",
+  "size": 20804,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0046-optimistic-cluster-restart-automation.md"
+ },
+ {
+  "name": "0047-syscall-and-sysvar-for-last-restart-slot.md",
+  "type": "file",
+  "size": 5657,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0047-syscall-and-sysvar-for-last-restart-slot.md"
+ },
+ {
+  "name": "0048-native-program-for-secp256r1-sigverify.md",
+  "type": "file",
+  "size": 5432,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0048-native-program-for-secp256r1-sigverify.md"
+ },
+ {
+  "name": "0049-syscall-get-remaining-compute-units.md",
+  "type": "file",
+  "size": 3274,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0049-syscall-get-remaining-compute-units.md"
+ },
+ {
+  "name": "0064-transaction-receipt.md",
+  "type": "file",
+  "size": 16156,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0064-transaction-receipt.md"
+ },
+ {
+  "name": "0075-precompile-for-secp256r1-sigverify.md",
+  "type": "file",
+  "size": 15138,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0075-precompile-for-secp256r1-sigverify.md"
+ },
+ {
+  "name": "0079-allow_commission_decrease_at_any_time.md",
+  "type": "file",
+  "size": 3032,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0079-allow_commission_decrease_at_any_time.md"
+ },
+ {
+  "name": "0083-relax-entry-constraints.md",
+  "type": "file",
+  "size": 3658,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0083-relax-entry-constraints.md"
+ },
+ {
+  "name": "0084-disable-rent-fees-collection.md",
+  "type": "file",
+  "size": 2496,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0084-disable-rent-fees-collection.md"
+ },
+ {
+  "name": "0085-additional-fee-collector-constraints.md",
+  "type": "file",
+  "size": 4228,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0085-additional-fee-collector-constraints.md"
+ },
+ {
+  "name": "0088-enable-core-bpf-programs.md",
+  "type": "file",
+  "size": 5609,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0088-enable-core-bpf-programs.md"
+ },
+ {
+  "name": "0089-programify-feature-gate-program.md",
+  "type": "file",
+  "size": 4398,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0089-programify-feature-gate-program.md"
+ },
+ {
+  "name": "0093-disable-bpf-loader-instructions.md",
+  "type": "file",
+  "size": 2289,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0093-disable-bpf-loader-instructions.md"
+ },
+ {
+  "name": "0096-reward-collected-priority-fee-in-entirety.md",
+  "type": "file",
+  "size": 2506,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0096-reward-collected-priority-fee-in-entirety.md"
+ },
+ {
+  "name": "0105-dynamic-reserved-accounts-set.md",
+  "type": "file",
+  "size": 6165,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0105-dynamic-reserved-accounts-set.md"
+ },
+ {
+  "name": "0118-partitioned-epoch-reward-distribution.md",
+  "type": "file",
+  "size": 12354,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0118-partitioned-epoch-reward-distribution.md"
+ },
+ {
+  "name": "0123-block-revenue-distribution.md",
+  "type": "file",
+  "size": 12664,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0123-block-revenue-distribution.md"
+ },
+ {
+  "name": "0127-get-sysvar-syscall.md",
+  "type": "file",
+  "size": 9216,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0127-get-sysvar-syscall.md"
+ },
+ {
+  "name": "0128-migrate-address-lookup-table-to-core-bpf.md",
+  "type": "file",
+  "size": 2258,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0128-migrate-address-lookup-table-to-core-bpf.md"
+ },
+ {
+  "name": "0129-alt-bn128-simplified-error-code.md",
+  "type": "file",
+  "size": 6465,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0129-alt-bn128-simplified-error-code.md"
+ },
+ {
+  "name": "0133-syscall-get-epoch-stake.md",
+  "type": "file",
+  "size": 4450,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0133-syscall-get-epoch-stake.md"
+ },
+ {
+  "name": "0137-curve25519-error.md",
+  "type": "file",
+  "size": 4270,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0137-curve25519-error.md"
+ },
+ {
+  "name": "0138-deprecate-legacy-vote-instructions.md",
+  "type": "file",
+  "size": 1271,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0138-deprecate-legacy-vote-instructions.md"
+ },
+ {
+  "name": "0140-migrate-config-to-core-bpf.md",
+  "type": "file",
+  "size": 2251,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0140-migrate-config-to-core-bpf.md"
+ },
+ {
+  "name": "0148-stake-program-move-instructions.md",
+  "type": "file",
+  "size": 8765,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0148-stake-program-move-instructions.md"
+ },
+ {
+  "name": "0149-migrate-snapshot-epoch-stakes.md",
+  "type": "file",
+  "size": 6067,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0149-migrate-snapshot-epoch-stakes.md"
+ },
+ {
+  "name": "0152-precompiles.md",
+  "type": "file",
+  "size": 9542,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0152-precompiles.md"
+ },
+ {
+  "name": "0153-elgamal-proof-program.md",
+  "type": "file",
+  "size": 5254,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0153-elgamal-proof-program.md"
+ },
+ {
+  "name": "0159-relax-precompile-failure-constraint.md",
+  "type": "file",
+  "size": 2928,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0159-relax-precompile-failure-constraint.md"
+ },
+ {
+  "name": "0160-static-instruction-limit.md",
+  "type": "file",
+  "size": 2431,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0160-static-instruction-limit.md"
+ },
+ {
+  "name": "0162-remove-accounts-executable-flag-checks.md",
+  "type": "file",
+  "size": 5230,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0162-remove-accounts-executable-flag-checks.md"
+ },
+ {
+  "name": "0163-lift-cpi-caller-restriction.md",
+  "type": "file",
+  "size": 4283,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0163-lift-cpi-caller-restriction.md"
+ },
+ {
+  "name": "0166-dynamic-stack-frames.md",
+  "type": "file",
+  "size": 7872,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0166-dynamic-stack-frames.md"
+ },
+ {
+  "name": "0170-builtin-instruction-cost-and-budget.md",
+  "type": "file",
+  "size": 5557,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0170-builtin-instruction-cost-and-budget.md"
+ },
+ {
+  "name": "0173-sbpf-instruction-encoding-improvements.md",
+  "type": "file",
+  "size": 4610,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0173-sbpf-instruction-encoding-improvements.md"
+ },
+ {
+  "name": "0174-sbpf-arithmetics-improvements.md",
+  "type": "file",
+  "size": 6493,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0174-sbpf-arithmetics-improvements.md"
+ },
+ {
+  "name": "0175-disable-partitioned-rent-collection.md",
+  "type": "file",
+  "size": 1698,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0175-disable-partitioned-rent-collection.md"
+ },
+ {
+  "name": "0178-static-syscalls.md",
+  "type": "file",
+  "size": 4023,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0178-static-syscalls.md"
+ },
+ {
+  "name": "0180-vote-account-leader-schedule.md",
+  "type": "file",
+  "size": 4021,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0180-vote-account-leader-schedule.md"
+ },
+ {
+  "name": "0182-conditional-cu-metering.md",
+  "type": "file",
+  "size": 4908,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0182-conditional-cu-metering.md"
+ },
+ {
+  "name": "0183-skip-rent-rewrites.md",
+  "type": "file",
+  "size": 2734,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0183-skip-rent-rewrites.md"
+ },
+ {
+  "name": "0185-vote-account-v4.md",
+  "type": "file",
+  "size": 10261,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0185-vote-account-v4.md"
+ },
+ {
+  "name": "0186-loaded-transaction-data-size-specification.md",
+  "type": "file",
+  "size": 9906,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0186-loaded-transaction-data-size-specification.md"
+ },
+ {
+  "name": "0189-sbpf-stricter-elf-headers.md",
+  "type": "file",
+  "size": 3661,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0189-sbpf-stricter-elf-headers.md"
+ },
+ {
+  "name": "0191-enable-transaction-loading-failure-fees.md",
+  "type": "file",
+  "size": 6484,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0191-enable-transaction-loading-failure-fees.md"
+ },
+ {
+  "name": "0194-deprecate-rent-exemption-threshold.md",
+  "type": "file",
+  "size": 4524,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0194-deprecate-rent-exemption-threshold.md"
+ },
+ {
+  "name": "0196-migrate-stake-to-core-bpf.md",
+  "type": "file",
+  "size": 2128,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0196-migrate-stake-to-core-bpf.md"
+ },
+ {
+  "name": "0204-slashable-event-verification.md",
+  "type": "file",
+  "size": 14606,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0204-slashable-event-verification.md"
+ },
+ {
+  "name": "0207-raise-block-limits-to-50M.md",
+  "type": "file",
+  "size": 3127,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0207-raise-block-limits-to-50M.md"
+ },
+ {
+  "name": "0215-accounts-lattice-hash.md",
+  "type": "file",
+  "size": 8413,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0215-accounts-lattice-hash.md"
+ },
+ {
+  "name": "0219-stricter-abi-and-runtime-constraints.md",
+  "type": "file",
+  "size": 5308,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0219-stricter-abi-and-runtime-constraints.md"
+ },
+ {
+  "name": "0220-snapshots-use-accounts-lattice-hash.md",
+  "type": "file",
+  "size": 1861,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0220-snapshots-use-accounts-lattice-hash.md"
+ },
+ {
+  "name": "0222-fix-alt-bn128-multiplication-length-check.md",
+  "type": "file",
+  "size": 2107,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0222-fix-alt-bn128-multiplication-length-check.md"
+ },
+ {
+  "name": "0223-removes-accounts-delta-hash.md",
+  "type": "file",
+  "size": 1543,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0223-removes-accounts-delta-hash.md"
+ },
+ {
+  "name": "0232-custom-commission-collector.md",
+  "type": "file",
+  "size": 7177,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0232-custom-commission-collector.md"
+ },
+ {
+  "name": "0242-static-nonce-account.md",
+  "type": "file",
+  "size": 2550,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0242-static-nonce-account.md"
+ },
+ {
+  "name": "0249-delay-commission-updates.md",
+  "type": "file",
+  "size": 1854,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0249-delay-commission-updates.md"
+ },
+ {
+  "name": "0256-raise-block-limits-to-60M.md",
+  "type": "file",
+  "size": 3319,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0256-raise-block-limits-to-60M.md"
+ },
+ {
+  "name": "0266-efficient-token-program.md",
+  "type": "file",
+  "size": 10788,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0266-efficient-token-program.md"
+ },
+ {
+  "name": "0267-rent-epoch-in-vm-is-a-constant.md",
+  "type": "file",
+  "size": 1601,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0267-rent-epoch-in-vm-is-a-constant.md"
+ },
+ {
+  "name": "0268-raise-cpi-nesting-limit.md",
+  "type": "file",
+  "size": 955,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0268-raise-cpi-nesting-limit.md"
+ },
+ {
+  "name": "0284-alt-bn128-little-endian.md",
+  "type": "file",
+  "size": 2718,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0284-alt-bn128-little-endian.md"
+ },
+ {
+  "name": "0286-raise-block-limits-to-100M.md",
+  "type": "file",
+  "size": 2936,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0286-raise-block-limits-to-100M.md"
+ },
+ {
+  "name": "0290-relax-fee-payer-constraint.md",
+  "type": "file",
+  "size": 4037,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0290-relax-fee-payer-constraint.md"
+ },
+ {
+  "name": "0291-commission-rate-in-basis-points.md",
+  "type": "file",
+  "size": 4258,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0291-commission-rate-in-basis-points.md"
+ },
+ {
+  "name": "0296-larger-transactions.md",
+  "type": "file",
+  "size": 6673,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0296-larger-transactions.md"
+ },
+ {
+  "name": "0297-relax-invalid-nonce.md",
+  "type": "file",
+  "size": 3349,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0297-relax-invalid-nonce.md"
+ },
+ {
+  "name": "0298-bank-hash-in-block-footer.md",
+  "type": "file",
+  "size": 9402,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0298-bank-hash-in-block-footer.md"
+ },
+ {
+  "name": "0302-bn254-g2-syscalls.md",
+  "type": "file",
+  "size": 4163,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0302-bn254-g2-syscalls.md"
+ },
+ {
+  "name": "0306-raise-account-cu-limits.md",
+  "type": "file",
+  "size": 3444,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0306-raise-account-cu-limits.md"
+ },
+ {
+  "name": "0307-add-block-footer.md",
+  "type": "file",
+  "size": 14301,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0307-add-block-footer.md"
+ },
+ {
+  "name": "0312-create-account-allow-prefund.md",
+  "type": "file",
+  "size": 6944,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0312-create-account-allow-prefund.md"
+ },
+ {
+  "name": "0313-drop-unchained-merkle-shreds.md",
+  "type": "file",
+  "size": 2255,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0313-drop-unchained-merkle-shreds.md"
+ },
+ {
+  "name": "0317-enforce-32-data-shreds.md",
+  "type": "file",
+  "size": 1974,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0317-enforce-32-data-shreds.md"
+ },
+ {
+  "name": "0321-vm-r2-instruction-data-pointer.md",
+  "type": "file",
+  "size": 5259,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0321-vm-r2-instruction-data-pointer.md"
+ },
+ {
+  "name": "0326-alpenglow.md",
+  "type": "file",
+  "size": 10330,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0326-alpenglow.md"
+ },
+ {
+  "name": "0332-cha-cha-8.md",
+  "type": "file",
+  "size": 1667,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0332-cha-cha-8.md"
+ },
+ {
+  "name": "0333-snapshot-include-block-id.md",
+  "type": "file",
+  "size": 2523,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0333-snapshot-include-block-id.md"
+ },
+ {
+  "name": "0334-fix-alt-bn128-pairing-length-check.md",
+  "type": "file",
+  "size": 2466,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0334-fix-alt-bn128-pairing-length-check.md"
+ },
+ {
+  "name": "0337-parent-ready-update-marker.md",
+  "type": "file",
+  "size": 11642,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0337-parent-ready-update-marker.md"
+ },
+ {
+  "name": "0339-increase-cpi-account-info-limit.md",
+  "type": "file",
+  "size": 4430,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0339-increase-cpi-account-info-limit.md"
+ },
+ {
+  "name": "0340-validate-chained-block-id.md",
+  "type": "file",
+  "size": 7349,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0340-validate-chained-block-id.md"
+ },
+ {
+  "name": "0357-alpenglow_validator_admission_ticket.md",
+  "type": "file",
+  "size": 5789,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0357-alpenglow_validator_admission_ticket.md"
+ },
+ {
+  "name": "0359-poseidon-enforce-input-length.md",
+  "type": "file",
+  "size": 2882,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0359-poseidon-enforce-input-length.md"
+ },
+ {
+  "name": "0376-verify-strict.md",
+  "type": "file",
+  "size": 7641,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0376-verify-strict.md"
+ },
+ {
+  "name": "0377-ebpf-isa-compatibility.md",
+  "type": "file",
+  "size": 4819,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0377-ebpf-isa-compatibility.md"
+ },
+ {
+  "name": "0384-alpenglow-migration.md",
+  "type": "file",
+  "size": 11540,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0384-alpenglow-migration.md"
+ },
+ {
+  "name": "0385-transaction-v1.md",
+  "type": "file",
+  "size": 11195,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0385-transaction-v1.md"
+ },
+ {
+  "name": "0387-bls-pubkey-management-in-vote-account.md",
+  "type": "file",
+  "size": 9297,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0387-bls-pubkey-management-in-vote-account.md"
+ },
+ {
+  "name": "0388-bls12-381-syscalls.md",
+  "type": "file",
+  "size": 18119,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0388-bls12-381-syscalls.md"
+ },
+ {
+  "name": "0391-replace-stake-program-floating-point.md",
+  "type": "file",
+  "size": 11592,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0391-replace-stake-program-floating-point.md"
+ },
+ {
+  "name": "0392-rent-increase-adaptations.md",
+  "type": "file",
+  "size": 15208,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0392-rent-increase-adaptations.md"
+ },
+ {
+  "name": "0406-maximum-instruction-accounts.md",
+  "type": "file",
+  "size": 2388,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0406-maximum-instruction-accounts.md"
+ },
+ {
+  "name": "0418-enable-loader-v2-to-v3-program-migrations.md",
+  "type": "file",
+  "size": 4451,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0418-enable-loader-v2-to-v3-program-migrations.md"
+ },
+ {
+  "name": "0430-relax-program-buffer-constraints.md",
+  "type": "file",
+  "size": 6246,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0430-relax-program-buffer-constraints.md"
+ },
+ {
+  "name": "0431-minimum-extend-program-size.md",
+  "type": "file",
+  "size": 7035,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0431-minimum-extend-program-size.md"
+ },
+ {
+  "name": "0432-loader-v3-reclaim-closed-program.md",
+  "type": "file",
+  "size": 10776,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0432-loader-v3-reclaim-closed-program.md"
+ },
+ {
+  "name": "0433-loader-v3-set-program-data-to-elf-length.md",
+  "type": "file",
+  "size": 5688,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0433-loader-v3-set-program-data-to-elf-length.md"
+ },
+ {
+  "name": "0436-reduce-rent-exempt-minimum-by-2x.md",
+  "type": "file",
+  "size": 2320,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0436-reduce-rent-exempt-minimum-by-2x.md"
+ },
+ {
+  "name": "0437-incremental-rent-reduction.md",
+  "type": "file",
+  "size": 4124,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0437-incremental-rent-reduction.md"
+ },
+ {
+  "name": "0438-rent-increase-safeguard.md",
+  "type": "file",
+  "size": 1912,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0438-rent-increase-safeguard.md"
+ },
+ {
+  "name": "0444-relaxing-program-data-account-requirements.md",
+  "type": "file",
+  "size": 2216,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0444-relaxing-program-data-account-requirements.md"
+ },
+ {
+  "name": "0449-direct-account-pointers-in-program-input.md",
+  "type": "file",
+  "size": 5176,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0449-direct-account-pointers-in-program-input.md"
+ },
+ {
+  "name": "0458-stop-using-static-simplevote-transaction-cost.md",
+  "type": "file",
+  "size": 2830,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0458-stop-using-static-simplevote-transaction-cost.md"
+ },
+ {
+  "name": "0459-syscall-parameter-address-restrictions.md",
+  "type": "file",
+  "size": 3866,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0459-syscall-parameter-address-restrictions.md"
+ },
+ {
+  "name": "0460-virtual-address-space-adjustments.md",
+  "type": "file",
+  "size": 4095,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0460-virtual-address-space-adjustments.md"
+ },
+ {
+  "name": "0464-vote-account-initialize-v2.md",
+  "type": "file",
+  "size": 6091,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0464-vote-account-initialize-v2.md"
+ },
+ {
+  "name": "0490-upgrade-stake-to-v5.md",
+  "type": "file",
+  "size": 4244,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0490-upgrade-stake-to-v5.md"
+ },
+ {
+  "name": "0495-core-bpf-upgrade-procedure.md",
+  "type": "file",
+  "size": 10206,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0495-core-bpf-upgrade-procedure.md"
+ },
+ {
+  "name": "0500-disable-deployment-of-sbpf-v0-v1-v2.md",
+  "type": "file",
+  "size": 3121,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0500-disable-deployment-of-sbpf-v0-v1-v2.md"
+ },
+ {
+  "name": "0504-stricter-shred-validation.md",
+  "type": "file",
+  "size": 8370,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0504-stricter-shred-validation.md"
+ },
+ {
+  "name": "0505-upgrade-agave-secp256k1-to-k256.md",
+  "type": "file",
+  "size": 3845,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0505-upgrade-agave-secp256k1-to-k256.md"
+ },
+ {
+  "name": "0512-sha512-syscall.md",
+  "type": "file",
+  "size": 2969,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0512-sha512-syscall.md"
+ },
+ {
+  "name": "0525-reduce-slot-times.md",
+  "type": "file",
+  "size": 26513,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0525-reduce-slot-times.md"
+ },
+ {
+  "name": "0529-big-integer-modexp-syscall.md",
+  "type": "file",
+  "size": 16921,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0529-big-integer-modexp-syscall.md"
+ },
+ {
+  "name": "0550-double-disinflation.md",
+  "type": "file",
+  "size": 6919,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0550-double-disinflation.md"
+ },
+ {
+  "name": "0553-resource-fee-burn.md",
+  "type": "file",
+  "size": 21621,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0553-resource-fee-burn.md"
+ },
+ {
+  "name": "0565-secp256r1-syscalls.md",
+  "type": "file",
+  "size": 11491,
+  "html_url": "https://github.com/solana-foundation/solana-improvement-documents/blob/main/proposals/0565-secp256r1-syscalls.md"
+ }
+]

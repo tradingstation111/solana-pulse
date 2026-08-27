@@ -67,6 +67,7 @@ def collect_all(*, sample_blocks: bool = True, workers: int = 6) -> dict[str, So
         "stablecoins": defi.collect_stablecoins,
         "news": news.collect_news,
         "simds": news.collect_simds,
+        "accepted_simds": news.collect_accepted_simds,
         "releases": news.collect_client_releases,
         "status": news.collect_status,
     }

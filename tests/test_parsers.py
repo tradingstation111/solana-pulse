@@ -166,3 +166,43 @@ class SimdParserTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class ProposalIndexTests(unittest.TestCase):
+    """The accepted-SIMD view built from the proposals directory listing."""
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.index = news.parse_proposal_index(json.loads(_fixture("simd_proposals.json")))
+
+    def test_accepted_documents_are_counted(self) -> None:
+        self.assertGreater(self.index["accepted_count"], 50)
+
+    def test_recent_list_is_sorted_by_simd_number_descending(self) -> None:
+        numbers = [d["simd"] for d in self.index["accepted_recent"] if d["simd"] is not None]
+        self.assertEqual(numbers, sorted(numbers, reverse=True))
+
+    def test_alpenglow_resolves_to_its_own_document_not_the_migration(self) -> None:
+        """Substring matching would wrongly pick 0384-alpenglow-migration."""
+        tracked = {u["label"]: u for u in self.index["tracked_upgrades"]}
+        self.assertEqual(tracked["Alpenglow"]["file"], "0326-alpenglow.md")
+        self.assertEqual(tracked["Alpenglow migration"]["file"], "0384-alpenglow-migration.md")
+
+    def test_every_tracked_upgrade_reports_a_status(self) -> None:
+        for upgrade in self.index["tracked_upgrades"]:
+            self.assertIn("accepted", upgrade)
+            self.assertTrue(upgrade["label"])
+            self.assertTrue(upgrade["why"])
+
+    def test_unmatched_upgrade_is_reported_as_not_accepted(self) -> None:
+        index = news.parse_proposal_index([
+            {"name": "0001-something-else.md", "type": "file", "size": 10, "html_url": "u"}])
+        self.assertTrue(all(not u["accepted"] for u in index["tracked_upgrades"]))
+
+    def test_non_markdown_entries_are_ignored(self) -> None:
+        index = news.parse_proposal_index([
+            {"name": "README", "type": "file", "size": 1, "html_url": "u"},
+            {"name": "assets", "type": "dir", "size": 0, "html_url": "u"},
+            {"name": "0002-a-real-one.md", "type": "file", "size": 5, "html_url": "u"}])
+        self.assertEqual(index["accepted_count"], 1)
+        self.assertEqual(index["accepted_recent"][0]["title"], "A real one")

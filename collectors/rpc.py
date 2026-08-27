@@ -293,19 +293,25 @@ def collect_watched_accounts(client: RpcClient) -> SourceResult:
                 row["balance_sol"] = None
                 row["error"] = str(exc)[:120]
             try:
-                sigs = client.call("getSignaturesForAddress", [account["address"], {"limit": 25}]) or []
+                sigs = client.call("getSignaturesForAddress", [account["address"], {"limit": 100}]) or []
                 times = [s["blockTime"] for s in sigs if s.get("blockTime")]
                 failed = sum(1 for s in sigs if s.get("err"))
                 row["recent_signatures"] = len(sigs)
                 row["failed_in_sample"] = failed
                 row["failure_rate_pct"] = (failed / len(sigs) * 100) if sigs else None
                 row["last_activity_unix"] = max(times) if times else None
-                # Signature timestamps span a window; 25 sigs over N seconds is a
-                # crude but honest per-account throughput reading.
-                if len(times) > 1 and (max(times) - min(times)) > 0:
-                    row["sig_rate_per_min"] = len(times) / ((max(times) - min(times)) / 60)
+                # Block times have one-second resolution, so a busy program can
+                # produce 100 signatures inside a single timestamp. When that
+                # happens the rate is reported as a lower bound rather than as
+                # a missing value or a fabricated precision.
+                span = (max(times) - min(times)) if len(times) > 1 else 0
+                row["signature_window_seconds"] = span
+                if times:
+                    row["sig_rate_per_min"] = len(times) / (max(span, 1) / 60)
+                    row["sig_rate_is_lower_bound"] = span == 0
                 else:
                     row["sig_rate_per_min"] = None
+                    row["sig_rate_is_lower_bound"] = False
             except Exception as exc:  # noqa: BLE001
                 row["recent_signatures"] = None
                 row["error"] = str(exc)[:120]

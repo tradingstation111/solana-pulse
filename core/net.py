@@ -118,7 +118,6 @@ def _request(
             with urllib.request.urlopen(req, timeout=timeout, context=_SSL_CONTEXT) as resp:
                 return _read_body(resp)
         except urllib.error.HTTPError as exc:  # noqa: PERF203 - retry policy differs per class
-            last = exc
             detail = ""
             try:
                 detail = exc.read(400).decode("utf-8", "replace").strip().replace("\n", " ")

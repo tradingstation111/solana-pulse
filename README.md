@@ -32,7 +32,7 @@ python3 solana_pulse.py --interval 30m       # run forever, regenerating every 3
 python3 solana_pulse.py --out docs           # write somewhere else
 python3 solana_pulse.py --blocks 12          # sample more blocks (more detail, more bandwidth)
 python3 solana_pulse.py --no-blocks --quiet  # fastest, lowest-bandwidth run
-python3 -m unittest discover -s tests -t .   # 75 offline tests, no network needed
+python3 -m unittest discover -s tests -t .   # 81 offline tests, no network needed
 ```
 
 Docker, if you prefer: `docker build -t solana-pulse . && docker run solana-pulse`.
@@ -98,7 +98,7 @@ collectors/news.py       RSS/Atom, SIMD pull requests, client releases, status p
 analysis/history.py      append-only JSONL store
 analysis/anomaly.py      three detectors (see below)
 render/                  html.py, charts.py, theme.py, markdown.py, jsonout.py, fmt.py
-tests/                   75 unit tests, all offline, real recorded fixtures
+tests/                   81 unit tests, all offline, real recorded fixtures
 ```
 
 **Fault isolation is the design centre.** Every source is fetched through one wrapper (`core.net.guarded`) that converts any exception — network, HTTP, or parse — into a failed `SourceResult`. A dead upstream degrades exactly one dashboard section, which then renders a visible *"source unavailable"* banner carrying the exact error. The run never crashes and never silently omits something. Section 07 of the dashboard shows every source, its latency, and its error if it has one.
@@ -116,7 +116,7 @@ Every source below is public and requires no key, no account and no token.
 | **DefiLlama** `api.llama.fi` | Chain TVL and its full daily history, per-protocol TVL on Solana, category mix, DEX volume, chain fees and REV, tokenised RWA including equities | Centralised-exchange wallets and bridges are excluded from the DeFi TVL figures — they hold assets *on* Solana without being Solana DeFi, and counting them inflates the number by roughly two-thirds. |
 | **DefiLlama stablecoins** `stablecoins.llama.fi` | Per-asset circulating supply on Solana, 24h/7d change, peg price, 12-month float history | Filtered to the `Solana` entry of each asset's `chainCirculating` map. |
 | **CoinGecko** `api.coingecko.com` | SOL price, market cap, FDV, volume, 1h/24h/7d/30d changes, ATH, 90-day daily chart, top `solana-ecosystem` tokens | The anonymous tier throttles hard, so the run makes exactly three calls, sequentially, with exponential backoff on HTTP 429. |
-| **GitHub REST API** (anonymous, 60 req/h) | Open and recently merged SIMDs from `solana-foundation/solana-improvement-documents`; Agave and Firedancer releases | SIMD numbers are extracted from PR titles; proposals matching tracked keywords (Alpenglow, SIMD-525 and others, configurable) are pulled into a highlighted panel. |
+| **GitHub REST API** (anonymous, 60 req/h) | Open and recently merged SIMDs from `solana-foundation/solana-improvement-documents`, the full list of **accepted** proposals, and Agave / Firedancer releases | Three questions, three views: what is proposed (open PRs), what was just decided (merged PRs), and what is actually accepted (the `proposals/` directory listing). Named upgrades — Alpenglow, its migration plan, SIMD-0525 reduced slot times, SIMD-0296 larger transactions, SIMD-0123 block revenue distribution — are matched to their documents by exact filename stem and shown with a plain-English note on why each matters. |
 | **RSS / Atom feeds** | solana.com news, Helius blog, Agave and Firedancer release feeds, SIMD repository commits | Parsed with `xml.etree` from the standard library; one parser handles both RSS 2.0 and Atom 1.0. A failing feed is listed by name rather than hidden. |
 | **Solana Statuspage** `status.solana.com` | Overall indicator, per-component status, open incidents | Any non-operational component raises an alert. |
 
@@ -124,7 +124,9 @@ Every source below is public and requires no key, no account and no token.
 
 **X / Twitter sentiment.** There is no keyless, terms-compliant way to read X. The public mirrors that exist are unreliable enough that any number taken from them would be a guess presented as data. The dashboard says so in plain words and links the official accounts instead. Fabricating a sentiment score would have been easy and would have been worse than the gap. If a key ever becomes acceptable, it is one new file in `collectors/`.
 
-**Dune Analytics.** Dune's API requires a key. Everything Solana Pulse would have taken from Dune — DEX volume, fees, REV, active wallets — is obtained keylessly instead, and the wallet figures are measured directly on chain rather than read from someone's dashboard.
+**Dune Analytics.** Both paths were tested rather than assumed. The REST API requires a key. The public embed endpoint (`dune.com/api/embeds/…/data`) is behind Cloudflare bot protection and returns a challenge page to any programmatic caller — a control the operator put there deliberately, and not one worth defeating. Everything Solana Pulse would have taken from Dune — DEX volume, fees, REV, wallet activity — is obtained keylessly from elsewhere, and the wallet figures are **measured on chain** from raw blocks rather than read off someone else's dashboard.
+
+**A single "daily active addresses" number.** No keyless source publishes one for Solana, and the honest alternative is to measure rather than to guess: the report counts distinct fee payers in blocks it downloads itself and states the sampling window plainly. Multiplying that up to a daily figure would produce a confident-looking number with no basis, so it is not done.
 
 ---
 
@@ -134,7 +136,7 @@ Every source below is public and requires no key, no account and no token.
 
 1. **Schedule** — `cron: "*/30 * * * *"`, every 30 minutes. Changing the cadence means editing that one line. `workflow_dispatch` allows a manual run with a chosen block-sample size.
 2. **No install step.** The workflow checks out the code, sets up Python and runs. There is nothing to install, which is also why there is nothing to break when a transitive dependency is yanked.
-3. **Tests first.** The 75 unit tests run before every collection. A broken parser fails the workflow instead of publishing a wrong number.
+3. **Tests first.** The 81 unit tests run before every collection. A broken parser fails the workflow instead of publishing a wrong number.
 4. **History is committed.** Each run appends roughly 700 bytes to `data/history.jsonl` and commits it. That file *is* the anomaly baseline, so persisting it across runs is what makes detection work at all. The full outputs are published to Pages rather than committed, which keeps the repository small; `samples/` is refreshed on manual runs so the repository always carries a readable example.
 5. **Concurrency guard.** A `concurrency` group prevents two collections from racing on the history file, and the push retries with `--rebase` if a peer run landed first.
 6. **Deploy.** `out/` is uploaded as a Pages artifact and deployed, so the live dashboard is never more than about 30 minutes old.
@@ -240,7 +242,7 @@ Reading the JSON instead: `out/latest.json` is the small, stable contract (statu
 python3 -m unittest discover -s tests -t . -v
 ```
 
-75 tests, no network access, running against recorded fixtures — a real mainnet block, real SIMD pull-request payloads, real feed documents. They cover the block parser, the RSS/Atom parser, the SIMD parser, the Nakamoto computation, all three anomaly detectors, the history store (including a deliberately truncated line), all three renderers, and the chart primitives against degenerate input. The dashboard test asserts there are **no external resource references**, which is what keeps the single-file promise honest.
+81 tests, no network access, running against recorded fixtures — a real mainnet block, real SIMD pull-request payloads, real feed documents. They cover the block parser, the RSS/Atom parser, the SIMD parser, the Nakamoto computation, all three anomaly detectors, the history store (including a deliberately truncated line), all three renderers, and the chart primitives against degenerate input. The dashboard test asserts there are **no external resource references**, which is what keeps the single-file promise honest.
 
 ---
 

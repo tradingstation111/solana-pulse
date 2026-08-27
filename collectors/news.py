@@ -188,6 +188,60 @@ def collect_simds() -> SourceResult:
     return guarded("GitHub: SIMD proposals", config.GITHUB_SIMD_OPEN, run)
 
 
+def parse_proposal_index(entries: list[dict[str, Any]]) -> dict[str, Any]:
+    """Turn the proposals directory listing into an accepted-SIMD view.
+
+    Answers a question the pull-request list cannot: which proposals have
+    actually been accepted, and where do the named upgrades everyone is
+    waiting on currently stand.
+    """
+    documents = []
+    for entry in entries:
+        name = entry.get("name") or ""
+        if not name.endswith(".md") or entry.get("type") != "file":
+            continue
+        number, _, stem = name[:-3].partition("-")
+        documents.append({
+            "file": name,
+            "stem": stem,
+            "simd": int(number) if number.isdigit() else None,
+            "title": stem.replace("-", " ").replace("_", " ").strip().capitalize(),
+            "url": entry.get("html_url"),
+            "size_bytes": entry.get("size"),
+        })
+    documents.sort(key=lambda d: d["simd"] if d["simd"] is not None else -1, reverse=True)
+
+    tracked = []
+    for label, needle, why in config.TRACKED_UPGRADES:
+        # Exact stem match first; a substring match is only a fallback, so
+        # "alpenglow" resolves to 0326-alpenglow and never to a longer name
+        # that merely contains it.
+        match = (next((d for d in documents if d["stem"].lower() == needle), None)
+                 or next((d for d in documents if needle in d["stem"].lower()), None))
+        tracked.append({
+            "label": label,
+            "why": why,
+            "accepted": match is not None,
+            "simd": match["simd"] if match else None,
+            "url": match["url"] if match else None,
+            "file": match["file"] if match else None,
+        })
+    return {
+        "accepted_count": len(documents),
+        "accepted_recent": documents[:12],
+        "tracked_upgrades": tracked,
+    }
+
+
+def collect_accepted_simds() -> SourceResult:
+    """Accepted SIMD documents and the status of the named upgrades."""
+
+    def run() -> dict[str, Any]:
+        return parse_proposal_index(fetch_json(config.GITHUB_SIMD_PROPOSALS, timeout=40.0))
+
+    return guarded("GitHub: accepted SIMDs", config.GITHUB_SIMD_PROPOSALS, run)
+
+
 def collect_client_releases() -> SourceResult:
     """Latest published releases for each validator client implementation."""
 

@@ -117,7 +117,9 @@ def robust_z(value: float, baseline: list[float]) -> tuple[float | None, float, 
         return (value - median) / spread, median, spread
     if value == median:
         return 0.0, median, 0.0
-    return (config.ROBUST_Z_CRITICAL if value != median else 0.0) * (1 if value > median else -1), median, 0.0
+    # A perfectly constant baseline with a step change: there is no spread to
+    # normalise by, so report the critical score in the direction of the move.
+    return config.ROBUST_Z_CRITICAL * (1 if value > median else -1), median, 0.0
 
 
 def _fmt(value: float | None, unit: str) -> str:

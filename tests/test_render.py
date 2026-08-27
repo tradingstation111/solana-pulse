@@ -231,7 +231,7 @@ class FormatTests(unittest.TestCase):
     """Formatting helpers must render missing data as an em dash, never crash."""
 
     def test_missing_values(self) -> None:
-        for func in (fmt.num, fmt.usd, fmt.pct, fmt.sol, fmt.lamports_to_sol):
+        for func in (fmt.num, fmt.usd, fmt.pct, fmt.sol):
             self.assertEqual(func(None), fmt.DASH)
 
     def test_usd_abbreviations(self) -> None:
