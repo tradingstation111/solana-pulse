@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T01:34:54Z",
+  "generated_at": "2026-08-27T02:07:12Z",
   "schema_version": "1.0",
   "status": "ok",
   "alerts": {
@@ -9,31 +9,33 @@
     "total": 0
   },
   "sources": {
-    "total": 19,
-    "ok": 16,
+    "total": 20,
+    "ok": 17,
     "degraded": [
-      "CoinGecko: SOL 90d chart",
-      "CoinGecko: SOL market",
-      "CoinGecko: ecosystem tokens"
+      "GitHub: SIMD proposals",
+      "GitHub: accepted SIMDs",
+      "GitHub: client releases"
     ]
   },
-  "history_records": 4,
+  "history_records": 15,
   "metrics": {
-    "tps": 4059.866666666667,
-    "non_vote_tps": 2194.616666666667,
-    "slot_time_ms": 365.8536585365854,
+    "tps": 4230.666666666667,
+    "non_vote_tps": 2380.0833333333335,
+    "slot_time_ms": 368.09815950920245,
     "epoch": 1023,
-    "epoch_progress_pct": 13.80648148148148,
+    "epoch_progress_pct": 15.020833333333334,
     "validator_count": 697,
-    "delinquent_count": 12,
-    "delinquent_stake_pct": 0.037564070446317904,
+    "delinquent_count": 11,
+    "delinquent_stake_pct": 0.022383507192126697,
     "nakamoto_coefficient": 18,
-    "tvl_usd": 5688924881.99397,
-    "dex_volume_24h_usd": 2490922081,
-    "chain_fees_24h_usd": 12986889.76,
+    "price_usd": 101.63,
+    "market_cap_usd": 59344821960,
+    "tvl_usd": 5697126840.445054,
+    "dex_volume_24h_usd": 2490946428,
+    "chain_fees_24h_usd": 12986896.76,
     "stablecoin_total_usd": 16213893860.683138,
-    "median_tx_fee_lamports": 5359.5,
-    "tx_failure_rate_pct": 45.141563466942095,
-    "staking_ratio_pct": 74.80096193149424
+    "median_tx_fee_lamports": 5469.25,
+    "tx_failure_rate_pct": 39.063705133490835,
+    "staking_ratio_pct": 74.80096480679542
   }
 }
